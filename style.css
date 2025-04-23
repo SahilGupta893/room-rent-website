@@ -1,0 +1,659 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+  background: #f44336;
+  color: white;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  /* position: sticky; */
+}
+
+.top-bar span {
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+header a[href="login.html"] {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.logo span {
+  color: #f44336;
+}
+
+/* Basic Navbar Styles */
+.navbar {
+  background-color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Hover style for parent item */
+.nav-links li:hover > a {
+  background-color: #f44336;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  color: black;
+}
+
+.dropdown-menu li a:hover {
+  /* background-color: #f4f4f4; */
+  background-color: gray;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+.post-ad {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("https://roomrentjaipur.com/wp-content/uploads/2021/10/banner1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  /* background: rgba(0, 0, 0, 0.5); */
+  border-radius: 10px;
+  font-size: 36px;
+font-weight: 500px;
+}
+
+.search-form {
+  margin: 20px 0;
+}
+
+.search-form select,
+.search-form input {
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.search-form button {
+  padding: 10px 15px;
+  background: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.advanced-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.advanced-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.locations {
+  background-color: #121212;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.locations h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.location-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.location-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.overlay span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  color: #ddd;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  display: block;
+  opacity: 1;
+}
+
+.category-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.category-title {
+  font-size: 28px;
+  background: white;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.icon-circle {
+  background-color: #f25c1a;
+  color: white;
+  width: 140px; /* Increased from 100px */
+  height: 140px; /* Increased from 100px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px; /* Increased font size */
+  margin-bottom: 10px;
+}
+
+.category-item p {
+  font-size: 18px;
+  color: #222;
+}
+
+.featured-section {
+  padding: 40px 20px;
+}
+
+.featured-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.label {
+  position: absolute;
+  background-color: orange;
+  color: white;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  top: 10px;
+  left: 10px;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.label.rent {
+  top: 10px;
+  right: 10px;
+  left: auto;
+  background: #444;
+}
+
+.card-info {
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Property Post Section */
+.property-section {
+  background: url('https://roomrentjaipur.com/wp-content/uploads/2021/10/post_property.jpg?id=18570') no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+}
+
+.property-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.property-content {
+  position: relative;
+  max-width: 600px;
+  margin: 50px;
+  z-index: 1;
+  line-height: 25px;
+}
+
+.property-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.property-content p, .property-content ol {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.get-started-btn {
+  background-color: #e75b30;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Top Banner Section */
+.top-banner {
+  background-color: #e75b30;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hover-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* Fix: prevent text break and make sure both spans are aligned */
+.default-text,
+.hovered-text {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Show default by default */
+.default-text {
+  opacity: 1;
+}
+
+/* Hide hovered text initially */
+.hovered-text {
+  opacity: 0;
+}
+
+/* Hover logic */
+.top-banner:hover .default-text {
+  opacity: 0;
+}
+
+.top-banner:hover .hovered-text {
+  opacity: 1;
+}
+
+.testimonial-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial-subtitle {
+  font-size: 1.2rem;
+  color: #777;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 350px;
+  position: relative;
+  text-align: left;
+}
+
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid white;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  color: #e75b30;
+  font-weight: bold;
+  margin: 0;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+
+.footer {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #333;
+  margin-top: 50px;
+}
+
+.footer-notice {
+  background-color: #f15a29;
+  color: white;
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.logo-section p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.footer-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #f15a29;
+}
+
+.highlight {
+  color: #f15a29;
+  font-weight: 500;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+
+}
+
+.social-icons a:hover {
+  background: #f15a29;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}

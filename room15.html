@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Rent Jaipur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .top-bar {
+      background-color: #f44336;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+
+    .top-bar .right a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar .logo span {
+      color: #f44336;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding-left: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .post-btn {
+      background-color: white;
+      border: 1px solid #f44336;
+      color: #f44336;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background-color: #555;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .room-buttons {
+      margin-top: 15px;
+    }
+
+    .room-buttons button {
+      background: white;
+      color: #555;
+      border: none;
+      margin: 5px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .room-buttons .active {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .property-listing {
+      flex: 3;
+      margin-right: 20px;
+    }
+
+    .property-card {
+      background: white;
+      display: flex;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .property-card img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .property-info {
+      margin-left: 20px;
+    }
+
+    .property-info h3 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .icons {
+      margin: 10px 0;
+      color: #f44336;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons button, .buttons a {
+      padding: 8px 12px;
+      border: 1px solid #f44336;
+      background-color: white;
+      color: #f44336;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      flex: 1;
+      max-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+    }
+
+    .sidebar input, .sidebar select, .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .sidebar button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+
+    .image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-container img {
+  /* width: 200px; */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Rent label */
+.rent-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #555;
+  color: white;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Hidden by default */
+.hover-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, rgba(255, 87, 34, 0.9), transparent);
+  color: white;
+  padding: 10px;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show on hover */
+.image-container:hover .hover-overlay {
+  opacity: 1;
+}
+
+.price-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.price-overlay .price {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price-overlay .monthly {
+  margin: 0;
+  font-size: 14px;
+}
+
+.icons-inline {
+  margin-top: 5px;
+}
+
+.icons-inline i {
+  margin-right: 10px;
+}
+
+/* Basic Navbar Item */
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+
+/* Hide dropdown by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* places the menu right below the parent */
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 6px;
+  padding: 8px 0;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="left">roomrentjaipur@gmail.com</div>
+    <div class="right">
+      <a href="#" id="loginLink">Login / Register</a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">🏠 ROOM RENT <span>JAIPUR</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Houses ▼</a></li>
+      <li><a href="#">Flats ▼</a></li>
+      <li><a href="#">P.G/Hostel ▼</a></li>
+      <li><a href="#">Shops & Offices</a></li>
+      <li><a href="#">People’s Need ▼</a></li>
+      <li><a href="#">For Sale</a></li>
+      <li><a href="#">LearnTheta</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Three Rooms Set for Rent in Jaipur</h1>
+    <p>roomrentjaipur.com offers 2300+ three room set with kitchen for Rent in Jaipur, Rajasthan. ✓Posted by Owners. ✓100% Verified Rental Houses in Jaipur</p>
+    <div class="room-buttons">
+      <button id="oneRoomBtn">One Room Set</button>
+      <button id="twoRoomBtn">Two Room Set</button>
+      <button id="threeRoomBtn" class="active">Three Room Set</button>
+      <button id="fourRoomBtn">Four Room Set</button>
+    </div>
+    
+  </section>
+
+  <main class="main-content">
+    <div class="property-listing">
+
+      <!-- First Card -->
+      <div class="property-card">
+        <div class="image-container">
+          <img src="https://roomrentjaipur.com/wp-content/uploads/2021/09/1_room.jpg" alt="House Image">
+          <div class="rent-label">Rent</div>
+          <div class="hover-overlay">
+            <div class="price-overlay">
+              <p class="price">Rs.16,500</p>
+              <p class="monthly">Monthly</p>
+              <div class="icons-inline">
+                <i class="fas fa-random"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="property-info">
+          <h3>3 BHK Fully Furnished Flat in Chordia Atulya, Kamla Nehru Nagar, Ajmer Road</h3>
+          <p><i class="fa fa-clock"></i> 1 day ago</p>
+          <div class="icons">
+            <span><i class="fa fa-bed"></i> Rooms 3</span> &nbsp;&nbsp;
+            <span><i class="fa fa-bath"></i> Bathrooms 2</span> &nbsp;&nbsp;
+            <span><i class="fa fa-bicycle"></i> Car Parking</span>
+          </div>
+          <div class="buttons">
+            <button><i class="fa fa-phone"></i> 8824523948</button>
+            <a href="#">View Detail</a>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Second Card -->
+      <div class="property-card">
+        <div class="image-container">
+          <img src="https://roomrentjaipur.com/wp-content/uploads/2021/09/1_room.jpg" alt="House Image">
+          <div class="rent-label">Rent</div>
+          <div class="hover-overlay">
+            <div class="price-overlay">
+              <p class="price">Rs.15,500</p>
+              <p class="monthly">Monthly</p>
+              <div class="icons-inline">
+                <i class="fas fa-random"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="property-info">
+          <h3>3 BHK Independent Villa on Govindpura Sirsi Road</h3>
+          <p><i class="fa fa-clock"></i> 1 day ago</p>
+          <div class="icons">
+            <span><i class="fa fa-bed"></i> Rooms 3</span> &nbsp;&nbsp;
+            <span><i class="fa fa-bath"></i> Bathrooms 3</span> &nbsp;&nbsp;
+            <span><i class="fa fa-bicycle"></i> Car Parking</span>
+          </div>
+          <div class="buttons">
+            <button><i class="fa fa-phone"></i> 8824523948</button>
+            <a href="#">View Detail</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar goes here (INSIDE main-content) -->
+    <aside class="sidebar">
+      <h2>Find New Home</h2>
+      <select>
+        <option>All over Jaipur</option>
+        <option>Malviya Nagar</option>
+        <option>Vaishali Nagar</option>
+      </select>
+      <select>
+        <option>Any Property type</option>
+        <option>1 Room Set</option>
+        <option>2 Room Set</option>
+        <option>Houses</option>
+        <option>Flats</option>
+      </select>
+      <button>Search</button>
+    </aside>
+  </main>
+<script src="script.js"></script>
+  
+</body>
+</html>

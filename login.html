@@ -1,0 +1,56 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body class="login-page">
+    <a href="index.html" class="close-btn">×</a>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <label for="phone">Use Phone Number</label>
+    <input type="text" id="phone" placeholder="81234 56789" />
+    <button class="continue-btn">Continue →</button>
+    <p class="register-text">
+      Not a member yet? 
+      <a href="register.html" id="registerLink">Register Now</a>
+  </p>
+  </div>
+</body>
+<!-- In your login.html -->
+<script>
+  // Add ID to your register link
+  document.querySelector('.register-text a').id = 'registerLink';
+  
+  // Redirection function
+  function redirectToRegister(event) {
+      event.preventDefault(); // Prevent default link behavior
+      window.location.href = 'register.html'; // Redirect to registration page
+  }
+  
+  // Add event listener
+  document.getElementById('registerLink').addEventListener('click', redirectToRegister);
+
+  
+document.querySelector('.continue-btn').addEventListener('click', function() {
+    const phone = document.getElementById('phone').value;
+    const storedUser = JSON.parse(localStorage.getItem('userData'));
+
+    if (storedUser && storedUser.phone === phone) {
+        console.log('Login successful:', storedUser);
+        alert('Login successful!');
+        window.location.href = 'index.html'; // Or wherever you want to redirect
+    } else {
+        alert('User not registered. Please register first.');
+    }
+});
+
+  </script>
+
+  <script src="script.js"></script>
+</html>
+
