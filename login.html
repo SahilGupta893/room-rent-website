@@ -41,9 +41,11 @@ document.querySelector('.continue-btn').addEventListener('click', function() {
     const storedUser = JSON.parse(localStorage.getItem('userData'));
 
     if (storedUser && storedUser.phone === phone) {
-        console.log('Login successful:', storedUser);
+        // Store logged-in user in session storage
+        sessionStorage.setItem('loggedInUser', storedUser.firstName);
+
         alert('Login successful!');
-        window.location.href = 'index.html'; // Or wherever you want to redirect
+        window.location.href = 'index.html'; // Redirect to home
     } else {
         alert('User not registered. Please register first.');
     }

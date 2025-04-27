@@ -161,6 +161,13 @@ header a[href="login.html"] {
 font-weight: 500px;
 }
 
+.announce{
+  color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 40px;
+}
+
 .search-form {
   margin: 20px 0;
 }

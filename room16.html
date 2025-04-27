@@ -118,6 +118,7 @@
       border-radius: 8px;
       margin-bottom: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 10px;
     }
 
     .property-card img {
@@ -302,7 +303,13 @@
   <div class="top-bar">
     <div class="left">roomrentjaipur@gmail.com</div>
     <div class="right">
-      <a href="#" id="loginLink">Login / Register</a>
+      <span id="authLinks">
+        👤 <a href="login.html">Login</a>/<a style="color: white; text-decoration: none;" href="register.html">Register</a>
+      </span>
+      <span id="welcomeUser" style="display: none;">
+        👤 <span id="welcomeText">Welcome, Guest!</span>
+      </span>
+      
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -310,7 +317,7 @@
   </div>
 
   <nav class="navbar">
-    <div class="logo">🏠 ROOM RENT <span>JAIPUR</span></div>
+    <div class="logo" id="logo" style="cursor: pointer;">🏠 ROOM RENT <span>JAIPUR</span></div>
     <ul class="nav-links">
       <li><a href="#">Houses ▼</a></li>
       <li><a href="#">Flats ▼</a></li>

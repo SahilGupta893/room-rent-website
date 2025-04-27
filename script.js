@@ -134,7 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
     oneRoomBtn: "room13.html",
     twoRoomBtn: "room14.html",
     threeRoomBtn: "room15.html",
-    fourRoomBtn: "room16.html"
+    fourRoomBtn: "room16.html",
+    onebhk: "flat1bhk.html",
+    twobhk: "flat2bhk.html",
+    threebhk: "flat3bhk.html",
+    fourbhk: "flat4bhk.html",
   };
 
   Object.entries(pageMap).forEach(([id, url]) => {
@@ -155,6 +159,101 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+  const loggedInName = sessionStorage.getItem('loggedInUser');
+  if (loggedInName) {
+    document.getElementById('welcomeText').textContent = `Welcome, ${loggedInName}!`;
+  }
+
+  
+  const user = sessionStorage.getItem('loggedInUser');
+
+  if (user) {
+    document.getElementById('authLinks').style.display = 'none';
+    document.getElementById('welcomeUser').style.display = 'inline';
+    document.getElementById('welcomeText').textContent = `Welcome, ${user}!`;
+  }
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("sodalaCard");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "sodla.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("malivya");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "malivya.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("vashali");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "vashali.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("gopalpura");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "gopalpura.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("mansarovar");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "mansarovar.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sodalaCard = document.getElementById("vidhyadhar");
+  
+    if (sodalaCard) {
+      sodalaCard.addEventListener("click", () => {
+        window.location.href = "vidhyadhar.html"; // change to your actual page
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.getElementById("logo");
+  
+    if (logo) {
+      logo.addEventListener("click", () => {
+        window.location.href = "index.html"; // change this to your home page filename if different
+      });
+    }
+  });
+
+  
+  // flats part
+
+
+  
+
+
+
 
 
 

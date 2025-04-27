@@ -12,11 +12,16 @@
     <header>
         <div class="top-bar">
             <span>📧 roomrentjaipur@gmail.com</span>
-            <span>👤 <a href="login.html">Login / Register</a>
+            <span id="authLinks">
+              👤 <a href="login.html">Login</a> / <a style="color: white; text-decoration: none;" href="register.html">Register</a>
             </span>
+            <span id="welcomeUser" style="display: none;">
+              👤 <span id="welcomeText">Welcome, Guest!</span>
+            </span>
+            
         </div>
         <nav class="navbar">
-            <div class="logo">🏠 ROOM RENT <span>JAIPUR</span></div>
+            <div class="logo" id="logo" style="cursor: pointer;">🏠 ROOM RENT <span>JAIPUR</span></div>
             <nav class="navbar">
                 <ul class="nav-links">
                     <li class="dropdown">
@@ -57,7 +62,14 @@
         <div class="hero-content">
             
               <div>
-                <b>"Welcome to RoomRent – Your go-to platform for finding the perfect room in Jaipur!"</b>
+                <h2>
+                  Find Your Dream Home
+                </h2>
+                <div class="announce">
+                  We have
+                  <strong>11229</strong>
+                  properties for you!
+                </div>
               </div>
             
         </div>
@@ -67,27 +79,27 @@
       <h2>Room Rent Jaipur helps people and homes find each other</h2>
     
       <div class="location-grid">
-        <div class="location-card">
+        <div class="location-card" id="sodalaCard">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/sodala.jpg" alt="Sodala">
           <div class="overlay">Sodala<br><span>616 Properties</span></div>
         </div>
-        <div class="location-card">
+        <div class="location-card" id="malivya">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/malviya-nagar.jpg" alt="Malviya Nagar">
           <div class="overlay">Malviya Nagar<br><span>667 Properties</span></div>
         </div>
-        <div class="location-card">
+        <div class="location-card" id="vashali">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/vaishali-nagar.jpg" alt="Vaishali Nagar">
           <div class="overlay">Vaishali Nagar<br><span>834 Properties</span></div>
         </div>
-        <div class="location-card">
+        <div class="location-card" id="gopalpura">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/gopalpura.jpg" alt="Gopalpura">
           <div class="overlay">Gopalpura<br><span>339 Properties</span></div>
         </div>
-        <div class="location-card">
+        <div class="location-card" id="mansarovar">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/mansarovar.jpg" alt="Mansarovar">
           <div class="overlay">Mansarovar<br><span>1073 Properties</span></div>
         </div>
-        <div class="location-card">
+        <div class="location-card" id="vidhyadhar">
           <img src="https://roomrentjaipur.com/wp-content/uploads/2021/10/vidhyadhar-nagar.jpg" alt="Vidhyadhar Nagar">
           <div class="overlay">Vidhyadhar Nagar<br><span>245 Properties</span></div>
         </div>
