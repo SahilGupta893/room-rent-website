@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add New Property - Room Rent Jaipur</title>
+  <link rel="stylesheet" href="add-property.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>Add New Property</h1>
+    <a href="admin-dashboard.html" class="back-btn">← Back to Dashboard</a>
+  </header>
+
+  <section class="form-section">
+    <form id="propertyForm">
+      <label>Property Title:</label>
+      <input type="text" id="title" required>
+
+      <label>Price (Monthly):</label>
+      <input type="number" id="price" required>
+
+      <label>Rooms:</label>
+      <input type="number" id="rooms" required>
+
+      <label>Bathrooms:</label>
+      <input type="number" id="bathrooms" required>
+
+      <label>Parking:</label>
+      <select id="parking">
+        <option value="Bike Parking">Bike Parking</option>
+        <option value="Car Parking">Car Parking</option>
+        <option value="No Parking">No Parking</option>
+      </select>
+
+      <label>Upload Image URL:</label>
+      <input type="text" id="imageUrl" required>
+
+      <button type="submit">Add Property</button>
+    </form>
+  </section>
+
+  <script src="add-property.js"></script>
+</body>
+</html>
